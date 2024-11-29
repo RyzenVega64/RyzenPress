@@ -1,6 +1,5 @@
 import { defineConfig } from "vitepress";
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
   // 网站描述
   title: "RyzenVega64",
@@ -8,7 +7,7 @@ export default defineConfig({
   description: "永远相信美好的事情即将发生",
   head: [["link", { rel: "icon", href: "/title.svg" }]],
   base: "/",
-  lastUpdated: true, // 最后更新时间
+
   scrollOffset: "header", // 滚动偏移
   cleanUrls: true, // 干净路由
   themeConfig: {
@@ -17,12 +16,37 @@ export default defineConfig({
     // 配置搜索
     search: {
       provider: "local",
+      options: {
+        locales: {
+          zh: {
+            translations: {
+              button: {
+                buttonText: "搜索文档",
+                buttonAriaLabel: "搜索文档",
+              },
+              modal: {
+                noResultsText: "无法找到相关结果",
+                resetButtonTitle: "清除查询条件",
+                footer: {
+                  selectText: "选择",
+                  navigateText: "切换",
+                },
+              },
+            },
+          },
+        },
+      },
     },
     // i18N
     i18nRouting: true,
-    // algolia: {
-
-    // },
+    // 最后更新配置
+    lastUpdated: {
+      text: "最后更新于",
+      formatOptions: {
+        dateStyle: "full",
+        timeStyle: "medium",
+      },
+    },
     // 配置导航栏
     nav: [
       { text: "GO", link: "/" },
@@ -116,9 +140,6 @@ export default defineConfig({
       infoLabel: "注意",
       detailsLabel: "详细",
     },
-  },
-  // 图片懒加载
-  arkdown: {
     image: {
       lazyLoading: true,
     },

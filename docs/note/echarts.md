@@ -8,7 +8,7 @@ import echarts from '../component/echarts.vue'
 
 > 在接触数据孪生、智慧城市、大屏可视化时，免不了要接触各式各样的图表，使用过程中各式各样的问题也会随之而来。
 
-## 图表自适应
+## 图表自适应 <Badge type="tip" text="Vue2" />
 
 为了解决在不同设备中 因分辨率、比例不同 导致的样式兼容性问题
 
@@ -68,7 +68,7 @@ ECharts 版本 <Badge type="tip" text="^5.3.2" />
 似乎是因为 Canvas 渲染问题导致 切换为 Svg 渲染解决
 
 ```javascript{2}
-let myChart = echarts.init(chartDom, null, {
+const myChart = echarts.init(chartDom, null, {
     renderer: "svg", // 设置渲染方式为 SVG
 });
 ```

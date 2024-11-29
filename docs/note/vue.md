@@ -19,7 +19,7 @@ npm -v
 node -v
 ```
 
-## 安装 <Badge type="tip" text="^3.4.14" />
+## 安装 `<Badge type="tip" text="^3.4.14" />`
 
 ```
 pnpm create vite
@@ -63,9 +63,13 @@ pnpm install
 pnpm run dev
 ```
 
-## 工具配置
+## 工具推荐
 
-使用的开发工具是[VS Code](https://code.visualstudio.com/)(推荐)，可以安装以下工具来提高开发效率及代码格式化
+使用的开发工具是[~~VS Code~~](https://code.visualstudio.com/)，可以安装以下工具来提高开发效率及代码格式化
+
+截止到 2024.11 更智能的 AI编辑器 Cursor问世 因此更推荐使用 Cursor 并使用 claude-3.5大模型！
+
+## 插件推荐
 
 - [ Chinese (Simplified) (简体中文) ]
 - [ HTML CSS Support ]
@@ -76,14 +80,14 @@ pnpm run dev
 - [ ESLint ]
 - [ GitLens ]
 - [ Live Server ]
-- [ Tabnine AI ]
 - [ TypeScript Vue Plugin (Volar) ]
 - [ Vue 3 Snippets ]
 - [ Vue Language Features (Volar) ]
-- [ Vue 3 Snippets ]
 - [ Vetur ]
+- [ GitLens ]
+- [ Git-commit-plugin ]
 
-## 插件推荐
+## 第三方库推荐
 
 图表库
 
@@ -91,9 +95,8 @@ pnpm run dev
 
 组件库
 
-- [Element-ui](https://element.eleme.cn/#/zh-CN "基于Vue2 面向设计师和开发者的组件库")
 - [Element-Plus](https://element-plus.gitee.io/zh-CN/ "基于Vue3 面向设计师和开发者的组件库")
-- [remixicon](https://remixicon.cn/ "简单令人愉快的图标系统")
+- [TDesign](https://element-plus.gitee.io/zh-CN/ "覆盖多端 功能更强的 Vue3组件库")
 
 请求库
 
@@ -106,10 +109,14 @@ pnpm run dev
 3D 库（ WebGL ）
 
 - [Cesium](https://cesium.com/ "3D 地理空间平台")
-- [three.js
-  ](http://www.webgl3d.cn/ "基于原生WebGL封装运行的三维引擎库")
-- [orillusion](https://www.orillusion.com/ "次时代 WebGPU 引擎")
+- [Three.js](http://www.webgl3d.cn/ "基于原生WebGL封装运行的三维引擎库")
+- [Orillusion](https://www.orillusion.com/ "次时代 WebGPU 引擎")
 
 跨平台
 
 - [Elector](https://electronjs.p2hp.com/ "构建跨平台桌面应用程序")
+
+Chart
+
+- [emoji-mart-vue-fast](https://www.npmjs.com/package/emoji-mart-vue-fast/ "emoji表情包选择器")
+
