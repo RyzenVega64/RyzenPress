@@ -1,19 +1,35 @@
 {
+  "name": "ryzenpress",
+  "version": "1.0.0",
+  "private": true,
+  "description": "张竞舟的交互作品集：家谱关系、AI 短剧与工业可视化",
   "type": "module",
+  "packageManager": "pnpm@12.16.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs"
   },
   "dependencies": {
-    "@types/three": "^0.161.2",
-    "echarts": "^5.5.1",
-    "three": "^0.161.0",
-    "vite": "^5.4.11"
+    "@fontsource/noto-sans-sc": "5.3.1",
+    "@phosphor-icons/vue": "2.2.1",
+    "gsap": "3.15.1",
+    "reka-ui": "2.11.0",
+    "three": "0.187.0",
+    "vue": "3.5.44"
   },
   "devDependencies": {
-    "sass": "^1.81.0",
-    "sass-loader": "^14.2.1",
-    "vitepress": "^1.5.0"
+    "@eslint/js": "10.0.1",
+    "@tailwindcss/vite": "4.3.4",
+    "eslint": "10.14.0",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-vue": "10.12.0",
+    "globals": "17.14.0",
+    "prettier": "3.9.10",
+    "tailwindcss": "4.3.4",
+    "vitepress": "1.6.4"
   }
 }

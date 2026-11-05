@@ -1,0 +1,69 @@
+/* Tailwind 设计变量集中管理字体、控件表面与排版尺度。 */
+@theme inline {
+  --font-sans: "PingFang SC", "Noto Sans SC", sans-serif;
+  --color-ui-panel: var(--surface);
+  --color-ui-raised: #151b14;
+  --color-ui-ink: var(--text);
+  --color-ui-muted: var(--muted);
+  --color-ui-line: #343e2e;
+  --color-ui-accent: var(--accent);
+  --radius-control: 6px;
+  --radius-panel: 8px;
+  --text-body: 15px;
+  --text-body--line-height: 1.8;
+  --text-control: 14px;
+  --text-control--line-height: 1.5;
+  --text-caption: 12px;
+  --text-caption--line-height: 1.7;
+}
+
+/* @apply 输出为组件类，原生控件与浮层共用同一套基础规范。 */
+.ui-select-trigger {
+  @apply inline-flex h-10 min-w-0 items-center justify-between gap-4 rounded-control border border-solid border-ui-line bg-ui-panel px-3 text-control font-medium text-ui-ink outline-none transition-[border-color,background-color,box-shadow] duration-150;
+  -webkit-appearance: none;
+}
+.field-stack > .ui-select-trigger, .industrial-panel > .ui-select-trigger { @apply w-full; }
+.ui-select-trigger:hover { @apply border-[#657652] bg-ui-raised; }
+.ui-select-trigger:focus-visible, .ui-select-trigger[data-state="open"] { @apply border-ui-accent shadow-[0_0_0_3px_rgb(200_255_91_/_0.09)]; outline: none; }
+.ui-select-trigger[data-disabled] { @apply pointer-events-none opacity-40; }
+.ui-select-trigger[data-placeholder] { @apply text-ui-muted; }
+.ui-select-trigger > span:first-child { @apply truncate text-left; }
+.ui-select-compact { @apply h-8 text-caption; }
+.ui-select-caret { @apply shrink-0 text-ui-muted transition-transform duration-150; }
+.ui-select-trigger[data-state="open"] .ui-select-caret { @apply rotate-180 text-ui-accent; }
+.ui-select-content { @apply z-[100] overflow-hidden rounded-panel border border-solid border-ui-line bg-ui-raised p-1.5 font-sans text-control text-ui-ink shadow-[0_12px_36px_rgb(0_0_0_/_0.45)]; min-width: var(--reka-select-trigger-width); max-width: calc(100vw - 24px); transform-origin: var(--reka-select-content-transform-origin); animation: menu-enter 150ms ease-out; }
+.ui-select-viewport { @apply max-h-72 overflow-y-auto; max-height: min(288px, var(--reka-select-content-available-height)); }
+.ui-select-item { @apply relative flex min-h-9 cursor-default select-none items-center gap-4 rounded-sm py-2 pr-9 pl-3 outline-none; }
+.ui-select-item:focus-visible { outline: none; }
+.ui-select-item[data-highlighted] { @apply bg-[#25331a] text-ui-accent; }
+.ui-select-item[data-state="checked"] { @apply font-medium text-ui-accent; }
+.ui-select-item[data-disabled] { @apply pointer-events-none opacity-35; }
+.ui-select-check { @apply absolute right-2.5 inline-flex; }
+.ui-slider { @apply relative flex h-8 w-full touch-none select-none items-center; }
+.ui-slider-track { @apply relative h-1 w-full grow overflow-hidden rounded-full bg-[#303a28]; }
+.ui-slider-range { @apply absolute h-full rounded-full bg-ui-accent; }
+.ui-slider-thumb { @apply block size-3.5 rounded-full border border-solid border-[#e5ffc0] bg-ui-accent shadow-[0_0_0_4px_rgb(200_255_91_/_0.07)] outline-none transition-shadow duration-150; }
+.ui-slider-thumb:hover, .ui-slider-thumb:focus-visible { @apply shadow-[0_0_0_6px_rgb(200_255_91_/_0.16)]; outline: none; }
+.ui-slider[data-disabled] { @apply pointer-events-none opacity-35; }
+.ui-number { @apply inline-flex h-10 w-full items-center overflow-hidden rounded-control border border-solid border-ui-line bg-ui-panel transition-[border-color,box-shadow] duration-150; }
+.ui-number:focus-within { @apply border-ui-accent shadow-[0_0_0_3px_rgb(200_255_91_/_0.09)]; }
+.ui-number .ui-number-input { @apply h-full min-w-0 flex-1 border-0 bg-transparent px-1 py-0 text-center text-control tabular-nums outline-none; box-shadow: none; }
+.ui-number .ui-number-input:focus { outline: none; box-shadow: none; }
+.ui-number-step { @apply inline-flex h-full w-9 shrink-0 items-center justify-center text-ui-muted transition-colors duration-150; }
+.ui-number-step:hover { @apply bg-ui-raised text-ui-accent; }
+.ui-number-step:disabled { @apply opacity-30; }
+.ui-tooltip { @apply z-[110] max-w-64 rounded-control border border-solid border-ui-line bg-ui-raised px-3 py-2 font-sans text-caption text-ui-ink shadow-lg; animation: menu-enter 120ms ease-out; }
+.field-stack { @apply flex w-full flex-col gap-2.5; }
+.field-stack > label, .field-label { @apply text-control font-medium text-ui-ink; }
+.field-note { @apply text-caption text-ui-muted; }
+.audio-player { @apply flex items-center gap-4 border-t border-solid border-ui-line px-5 py-4; }
+.audio-player-timeline { @apply min-w-0 flex-1; }
+.audio-player-time { @apply mt-1 flex justify-between text-caption text-ui-muted tabular-nums; }
+.audio-player-volume { @apply flex w-28 items-center gap-2 text-ui-muted; }
+.audio-player-volume .ui-slider { @apply min-w-0; }
+.audio-play-button { @apply inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-ui-accent text-[#101508] transition-colors duration-150; }
+.audio-play-button:hover { @apply bg-[#ddff9e]; }
+.audio-play-button:disabled { @apply opacity-30; }
+@keyframes menu-enter { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 767px) { .ui-select-compact { @apply h-10; } .audio-player { @apply gap-3 px-3; } .audio-player-volume { @apply w-20; } .ui-select-item { @apply min-h-10; } }
+@media (prefers-reduced-motion: reduce) { .ui-select-content, .ui-tooltip { animation: none; } }
